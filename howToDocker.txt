@@ -62,3 +62,10 @@ echo <IPs> >> .rhosts
 apt-get install nmap
 
 nmap -sS * -p- <endereço IP ou nome do host>
+
+# Usar wireshark pra capturar tráfego e monitorar tráfego (usar na máquina que vai fazer o ataque)
+
+apt install wireshark
+sudo wireshark
+
+# Ao abrir a interface, selecionar docker e iniciar captura
