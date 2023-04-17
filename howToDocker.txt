@@ -45,6 +45,8 @@ apt install rsh-redone-client rsh-redone-server
 
 /etc/init.d/openbsd-inetd start
 
+cd ~
+
 > .rhosts
 
 # Quarto, para descobrir o IP de uma máquina
@@ -53,8 +55,7 @@ cat /etc/hosts
 
 # Quinto, coloque o IP do sevidor no .rhosts do x-terminal e vice-versa
 
-echo "root@<IP>" >> .rhosts
-chmod 644 .rhosts
+echo <IPs> >> .rhosts
 
 # Sexto, usar um nmap pra descobrir os IPs e portas.
 
