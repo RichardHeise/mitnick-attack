@@ -31,6 +31,12 @@ sudo docker start <servidor>
 
 sudo docker start <x-terminal>
 
+#Para acessar o docker
+
+sudo docker exec -it <servidor> bash
+ 
+sudo docker exec -it <x-terminal> bash
+ 
 # Terceiro, dentro de cada um deles faça:
 
 apt update
@@ -46,3 +52,12 @@ apt install rsh-redone-client rsh-redone-server
 cat /etc/hosts
 
 # Quinto, coloque o IP do sevidor no .rhosts do x-terminal e vice-versa
+
+echo "root@<IP>" >> .rhosts
+chmod 644 .rhosts
+
+# Sexto, usar um nmap pra descobrir os IPs e portas.
+
+apt-get install nmap
+
+nmap -sS * -p- <endereço IP ou nome do host>
