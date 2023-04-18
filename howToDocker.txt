@@ -61,7 +61,7 @@ echo <IPs> >> .rhosts
 
 apt-get install nmap
 
-nmap -sS * -p- <endereço IP ou nome do host>
+nmap -sS <ip_da_subrede>
 
 # Usar wireshark pra capturar tráfego e monitorar tráfego (usar na máquina que vai fazer o ataque)
 
@@ -69,3 +69,10 @@ apt install wireshark
 sudo wireshark
 
 # Ao abrir a interface, selecionar docker e iniciar captura
+
+# Rodar o scapy_test.py (editar no código o ip da vitima, o ip do roteador e o MAC do atacante)
+# Esse código envenena a tabela ARP
+
+sudo python3 scapy_test.py
+
+
