@@ -19,9 +19,9 @@ sudo docker run hello-world
 
 sudo docker pull ubuntu:latest
 
-sudo docker run -dit --name <servidor> ubuntu:latest
+sudo docker run --cap-add=NET_ADMIN -dit --name <servidor> ubuntu:latest
 
-sudo docker run -dit --name <x-terminal> ubuntu:latest
+sudo docker run --cap-add=NET_ADMIN -dit --name <x-terminal> ubuntu:latest
 
 # Para entrar no servidor
 
@@ -57,11 +57,15 @@ cat /etc/hosts
 
 echo <IPs> >> .rhosts
 
-# Sexto, usar um nmap pra descobrir os IPs e portas.
+# Sexto, baixe alguns utilitários, principalmente no atacante
 
-apt-get install nmap
+apt install net-tools (ifconfig)
 
-nmap -sS <ip_da_subrede>
+apt install dsniff (arpspoof se quiser)
+
+apt install iputils-ping (comando ping)
+
+apt install hping3 (para derrubar a server, não precisa selecionar a região quando pedir, só dar ctrl+c até quebrar)
 
 # Usar wireshark pra capturar tráfego e monitorar tráfego (usar na máquina que vai fazer o ataque)
 
